@@ -7,6 +7,10 @@ public class FamousQuotes {
 
         Scanner scanner = new Scanner(System.in);
 
+        boolean continueLoop = true;
+
+        while (continueLoop) {
+
         try {
             String quotes[] = new String[10];
 
@@ -23,13 +27,23 @@ public class FamousQuotes {
 
             System.out.println("Select a quote(1-10): ");
             int quoteSelect = scanner.nextInt();
+            scanner.nextLine();
 
-            scanner.close();
 
             System.out.println(quotes[quoteSelect - 1]);
+
+            System.out.println("Do you want to see another quote(Y/N): ");
+            String continueQuote = scanner.nextLine();
+
+            if (continueQuote.equalsIgnoreCase("N")) {
+                continueLoop = false;
+            }
+
         } catch (Exception e) {
             System.out.println("Sorry the number you selected does not exist. Please try again.");
         }
+        }
+        scanner.close();
 
 
     }
