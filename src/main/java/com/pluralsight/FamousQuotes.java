@@ -24,6 +24,8 @@ public class FamousQuotes {
             System.out.println("Select a quote(1-10): ");
             int quoteSelect = scanner.nextInt();
 
+            scanner.close();
+
             System.out.println(quotes[quoteSelect - 1]);
         } catch (Exception e) {
             System.out.println("Sorry the number you selected does not exist. Please try again.");
